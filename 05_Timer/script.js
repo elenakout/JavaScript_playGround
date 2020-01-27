@@ -7,9 +7,9 @@ class Timer {
     this.startButton.addEventListener("click", this.start);
   }
 
-  start() {
+  start = () => {
     console.log("Timer started");
-  }
+  };
 }
 
 const durationInput = document.querySelector("#duration");

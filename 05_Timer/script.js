@@ -6,14 +6,22 @@ const circle = document.querySelector("circle");
 const perimeter = circle.getAttribute("r") * 2 * Math.PI;
 circle.setAttribute("stroke-dasharray", perimeter);
 
+let currentOffset = 0;
+let startDuration = 0;
+
 const timer = new Timer(durationInput, startButton, pauseButton, {
   onStart() {
-    console.log("Timer Started");
+    circle.setAttribute("stroke", "red");
+    startDuration = durationInput.value;
+    currentOffset = -(perimeter / startDuration);
   },
   onTick() {
-    console.log("tick");
+    circle.setAttribute("stroke-dashoffset", currentOffset);
+    currentOffset -= perimeter / startDuration;
   },
   onComplete() {
-    console.log("timer completed");
+    circle.setAttribute("stroke-dasharray", perimeter);
+    circle.setAttribute("stroke-dashoffset", 0);
+    circle.setAttribute("stroke", "green");
   }
 });

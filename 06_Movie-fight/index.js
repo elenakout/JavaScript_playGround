@@ -156,3 +156,21 @@ const movieTemplate = movieDetail => {
   </article>
   `;
 };
+
+const humburger = document.querySelector('.hamburger');
+
+humburger.addEventListener('click', () => {
+  // if (humburger.classList.contains('is-active')) {
+  //   humburger.classList.remove('is-active');
+  // } else {
+  //   humburger.classList.add('is-active');
+  // }
+
+  humburger.classList.toggle('is-active');
+});
+
+// option.addEventListener('click', () => {
+//   dropdown.classList.remove('is-active');
+//   input.value = inputValue(item);
+//   onOptionSelect(item);
+// });

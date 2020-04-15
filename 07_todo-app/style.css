@@ -5,7 +5,7 @@
 }
 
 body {
-  background: linear-gradient(to right, #005aa7, #4286f4);
+  background: linear-gradient(to right, #4286f4, #005aa7);
   color: white;
   font-family: 'Poppins', sans-serif;
   min-height: 100vh;

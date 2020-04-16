@@ -31,6 +31,8 @@ function deletecheck(e) {
 
     //Animation
     todo.classList.add('fall');
+    // Delete localstorage
+    removeLocalTodos(todo);
     todo.addEventListener('transitionend', function () {
       todo.remove();
     });
@@ -70,26 +72,15 @@ function filterTodo(e) {
 
 function saveLocalTodos(todo) {
   //Check if there are already todos
-  let todos;
-
-  if (localStorage.getItem('todos') === null) {
-    todos = [];
-  } else {
-    todos = JSON.parse(localStorage.getItem('todos'));
-  }
+  let todos = checkStorageTodos();
 
   todos.push(todo);
   localStorage.setItem('todos', JSON.stringify(todos));
 }
 
 function getTodos() {
-  let todos;
+  let todos = checkStorageTodos();
 
-  if (localStorage.getItem('todos') === null) {
-    todos = [];
-  } else {
-    todos = JSON.parse(localStorage.getItem('todos'));
-  }
   todos.forEach((todo) => {
     createTodoDiv(todo);
   });
@@ -119,4 +110,24 @@ function createTodoDiv(todo) {
 
   // Appent to List
   todoList.appendChild(todoDiv);
+}
+
+function removeLocalTodos(todo) {
+  let todos = checkStorageTodos();
+  const todoIndex = todos.indexOf(todo.children[0].innerText);
+
+  todos.splice(todoIndex, 1);
+  localStorage.setItem('todos', JSON.stringify(todos));
+}
+
+function checkStorageTodos() {
+  let todos;
+
+  if (localStorage.getItem('todos') === null) {
+    todos = [];
+  } else {
+    todos = JSON.parse(localStorage.getItem('todos'));
+  }
+
+  return todos;
 }

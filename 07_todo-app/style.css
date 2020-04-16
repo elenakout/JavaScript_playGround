@@ -47,6 +47,7 @@ form button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .todo-list {
@@ -139,4 +140,9 @@ select {
 .select:hover::after {
   background: white;
   color: #4286f4;
+}
+
+.empty {
+  margin: 0 auto;
+  display: none;
 }

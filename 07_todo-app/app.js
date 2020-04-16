@@ -41,7 +41,7 @@ function deletecheck(e) {
   const item = e.target;
 
   // Delete item
-  if (item.classList[0] === 'trash-btn') {
+  if (item.classList.contains('trash-btn')) {
     const todo = item.parentElement;
 
     //Animation
@@ -52,7 +52,7 @@ function deletecheck(e) {
   }
 
   // Check completed
-  if (item.classList[0] === 'complete-btn') {
+  if (item.classList.contains('complete-btn')) {
     const todo = item.parentElement;
     todo.classList.toggle('completed');
   }

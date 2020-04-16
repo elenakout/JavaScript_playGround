@@ -27,12 +27,14 @@ function createTodoDiv(todo) {
 function addTodo(event) {
   event.preventDefault();
 
-  createTodoDiv(todoInput.value);
+  if (todoInput.value.length > 0) {
+    createTodoDiv(todoInput.value);
 
-  //Add todo to LocalStorage
-  saveLocalTodos(todoInput.value);
+    //Add todo to LocalStorage
+    saveLocalTodos(todoInput.value);
 
-  todoInput.value = '';
+    todoInput.value = '';
+  }
 }
 
 function deletecheck(e) {

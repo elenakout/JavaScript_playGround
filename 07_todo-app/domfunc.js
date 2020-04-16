@@ -88,12 +88,10 @@ function filterTodo(e) {
   });
 
   if (visibleTodos.length === 0) {
-    console.log(message);
     message.style.display = 'flex';
   } else {
     message.style.display = 'none';
   }
-  console.log(visibleTodos);
 
   visibleTodos.forEach((todo) => {
     todo.style.display = 'flex';

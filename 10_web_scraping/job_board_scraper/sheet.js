@@ -1,4 +1,7 @@
 const { GoogleSpreadsheet } = require('google-spreadsheet');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 module.exports = class Sheet {
   constructor() {
@@ -6,7 +9,7 @@ module.exports = class Sheet {
   }
 
   async load() {
-    await this.doc.useServiceAccountAuth(require('./crendentials.json'));
+    await this.doc.useServiceAccountAuth(require('./cred.json'));
     await this.doc.loadInfo();
   }
 

@@ -1,5 +1,8 @@
 const Sheet = require('./sheet');
 const fetch = require('node-fetch');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 async function scrapePage(i) {
   const res = await fetch(`https://jobs.github.com/positions.json?page=${i}&search=code`);
@@ -43,6 +46,6 @@ async function scrapePage(i) {
 
   await sheet.addRows(rows)
 
-  console.log('operation complete');
+  console.log(process.env.SHEETS_PROJECT_ID);
 
 })()

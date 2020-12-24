@@ -1,3 +1,4 @@
 node_modules
 /crendentials.json
 10_web_scraping/job_board_scraper/crendentials.json
+*.env

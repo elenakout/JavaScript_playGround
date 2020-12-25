@@ -2,7 +2,7 @@ const { GoogleSpreadsheet } = require('google-spreadsheet');
 
 module.exports = class Sheet {
   constructor() {
-    this.doc = new GoogleSpreadsheet('169IbdIYLhXQPYASm5pzt8uicla6b6dFcW7G6yeYyxYc');
+    this.doc = new GoogleSpreadsheet(process.env.SPREAD_SHEET);
   }
 
   async load() {
@@ -10,8 +10,8 @@ module.exports = class Sheet {
     await this.doc.loadInfo();
   }
 
-  async addRows(rows) {
+  async readRows() {
     const sheet = this.doc.sheetsByIndex[0];
-    await sheet.addRows(rows);
+    return await sheet.getRows();
   }
 }

@@ -46,6 +46,6 @@ async function scrapePage(i) {
 
   await sheet.addRows(rows)
 
-  console.log(process.env.SHEETS_PROJECT_ID);
+
 
 })()

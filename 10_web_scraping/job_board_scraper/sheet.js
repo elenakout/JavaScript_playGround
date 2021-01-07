@@ -5,7 +5,7 @@ dotenv.config();
 
 module.exports = class Sheet {
   constructor() {
-    this.doc = new GoogleSpreadsheet('169IbdIYLhXQPYASm5pzt8uicla6b6dFcW7G6yeYyxYc');
+    this.doc = new GoogleSpreadsheet('1Psn5o4HIy4RhehCx7qmNPL4cjqgI0Y2FzyCwX_J3RJ0');
   }
 
   async load() {
